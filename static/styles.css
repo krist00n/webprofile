@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    background-color: #0d1117; /* Deep dark background for professional look */
+    color: #c9d1d9; /* Light gray text for good contrast */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.navbar {
+    background-color: #161b22; /* Dark navbar */
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand {
+    color: #58a6ff;
+    font-size: 1.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #79c0ff;
+}
+
+footer {
+    background-color: #161b22;
+    border-top: 1px solid #30363d;
+    padding: 20px 0;
+}
+
+footer p {
+    color: #8b949e;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: #1c2128; /* Darker card background */
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.8); /* More pronounced shadow on hover */
+}
+
+.card-img-top {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 20px auto;
+    display: block;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card-img-top:hover {
+    transform: scale(1.1); /* Smooth zoom effect */
+}
+
+.card-body {
+    text-align: center;
+    padding: 15px;
+}
+
+.card-title {
+    color: #58a6ff; /* Bright blue for title */
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-title:hover {
+    color: #79c0ff;
+}
+
+.card-text {
+    color: #8b949e;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Heading and Text Styles */
+h1 {
+    color: #58a6ff;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+p.lead {
+    color: #8b949e;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #58a6ff;
+    border-color: #58a6ff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #79c0ff;
+    border-color: #79c0ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p.lead {
+        font-size: 1.1rem;
+    }
+}

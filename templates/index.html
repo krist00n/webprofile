@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelompok Kami</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css"> 
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Profil Kelompok</a>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1>Kelompok Ultraman</h1>
+                <p class="lead">Kenali lebih lanjut tentang anggota kelompok kami.</p>
+            </div>
+
+            <div class="row" id="profile-container">
+                <!-- Profil anggota akan diisi secara dinamis melalui JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 Kelompok Kami. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mengambil data anggota dari Flask backend
+        fetch('/api/anggota')
+            .then(response => response.json())
+            .then(data => {
+                const profileContainer = document.getElementById('profile-container');
+                
+                data.forEach(anggota => {
+                    const colDiv = document.createElement('div');
+                    colDiv.classList.add('col-md-4');
+                    
+                    const cardDiv = `
+                        <div class="card">
+                            <img src="/img/${anggota.foto}" class="card-img-top" alt="Foto Profil">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${anggota.nama}</h5>
+                                <p class="card-text">NIM: ${anggota.nim}</p>
+                                <p class="card-text">${anggota.deskripsi}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    colDiv.innerHTML = cardDiv;
+                    profileContainer.appendChild(colDiv);
+                });
+            });
+    </script>
+</body>
+
+</html>
